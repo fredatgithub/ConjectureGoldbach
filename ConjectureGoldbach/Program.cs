@@ -7,7 +7,7 @@ namespace ConjectureGoldbach
   {
     static void Main()
     {
-      int n = 98;//int.Parse(Console.ReadLine());
+      int n = 98;
       if (n <= 2 )
       {
         n = 4;
