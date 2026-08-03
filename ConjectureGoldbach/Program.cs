@@ -7,30 +7,26 @@ namespace ConjectureGoldbach
   {
     static void Main()
     {
-      int n = 9800;
-      if (n <= 2 )
+      var result = new Dictionary<int, List<Tuple<int, int>>>();
+      //int n = 4;
+      for (int n = 4; n <= 10_000; n += 2)
       {
-        n = 4;
-      }
-
-      if (n % 2 != 0)
-      {
-        n++;
-      }
-
-      var pairs = new List<Tuple<int, int>>();
-      for (int i = 2; i <= n / 2; i++)
-      {
-        if (IsPrime(i) && IsPrime(n - i))
+        var pairs = new List<Tuple<int, int>>();
+        for (int i = 2; i <= n / 2; i++)
         {
-          pairs.Add(new Tuple<int, int>(i, n - i));
+          if (IsPrime(i) && IsPrime(n - i))
+          {
+            pairs.Add(new Tuple<int, int>(i, n - i));
+          }
         }
-      }
 
-      Console.WriteLine($"Goldbach's conjecture for {n}:");
-      foreach (var pair in pairs)
-      {
-        Console.WriteLine($"{pair.Item1} + {pair.Item2} = {n}");
+        Console.WriteLine($"Goldbach's conjecture for {n}:");
+        foreach (var pair in pairs)
+        {
+          Console.WriteLine($"{pair.Item1} + {pair.Item2} = {n}");
+        }
+
+        result[n] = pairs;
       }
 
       Console.WriteLine("Press any key to exit...");
