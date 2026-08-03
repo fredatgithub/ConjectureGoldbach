@@ -7,7 +7,7 @@ namespace ConjectureGoldbach
   {
     static void Main()
     {
-      int n = 98;
+      int n = 9800;
       if (n <= 2 )
       {
         n = 4;
@@ -18,7 +18,7 @@ namespace ConjectureGoldbach
         n++;
       }
 
-      List<Tuple<int, int>> pairs = new List<Tuple<int, int>>();
+      var pairs = new List<Tuple<int, int>>();
       for (int i = 2; i <= n / 2; i++)
       {
         if (IsPrime(i) && IsPrime(n - i))
