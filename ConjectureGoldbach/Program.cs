@@ -7,12 +7,15 @@ namespace ConjectureGoldbach
   {
     static void Main()
     {
-      Console.WriteLine("Enter an even number greater than 2:");
-      int n = int.Parse(Console.ReadLine());
-      if (n <= 2 || n % 2 != 0)
+      int n = 98;//int.Parse(Console.ReadLine());
+      if (n <= 2 )
       {
-        Console.WriteLine("Invalid input. Please enter an even number greater than 2.");
-        return;
+        n = 4;
+      }
+
+      if (n % 2 != 0)
+      {
+        n++;
       }
 
       List<Tuple<int, int>> pairs = new List<Tuple<int, int>>();
